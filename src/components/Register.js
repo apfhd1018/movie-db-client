@@ -19,7 +19,10 @@ const Register = ({ setRegister, setLogin }) => {
   // onSubmit 이벤트에서 async await => try, catch하지 않을경우 에러발생시 화면나감
   const onSubmit = async (values) => {
     try {
-      await axios.post("http://localhost:5000/api/users/add", values);
+      await axios.post(
+        " https://sheltered-stream-95909.herokuapp.com/api/users/add",
+        values
+      );
       alert("You have successfully registered as a member. Please log in.");
       setRegister(false);
       setLogin(true);
