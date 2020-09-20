@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.moviedb {
+  background-color: #223343;
+  height: 100vh;
+  padding-bottom: 50px;
+}
+/*---------- header--------- */
+header {
+  width: 300px;
+  height: 70px;
+  float: right;
+  margin-right: 20px;
+  padding: 0 30px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav span {
+  color: #fff;
+  line-height: 70px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav span:hover {
+  text-decoration: underline;
+}
+
+/* ---------page-title------- */
+.page-title {
+  padding: 120px 15px 0px;
+  text-align: center;
+}
+.page-title h1 {
+  color: #c1c1c1;
+  font-size: 56px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* =============search================ */
+.searchbox-wrap {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.searchbox-in {
+  display: flex;
+  justify-content: space-between;
+}
+.searchbox {
+  display: block;
+  width: 83%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: #eee;
+  border-radius: 8px;
+  color: #53565a;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.4s ease-out;
+}
+.searchbox-wrap button {
+  font-size: 20px;
+  padding: 0 24px;
+  border-radius: 6px;
+  margin-left: 10px;
+  background: #607d8b;
+  color: #fff;
+  /* outline: none; */
+  border: none;
+  cursor: pointer;
+}
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 3px #4484c4;
+}
+.search-icon {
+  padding-right: 8px;
+}
+/* =============resultlist================== */
+.resultlist-container {
+  background-color: #223343;
+}
+.resultlist {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.resultlist img {
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.resultlist img:hover {
+  transform: scale(1.05);
+}
+/* ==============result================ */
+.result {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.result-text {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+.result-text h3 {
+  color: #fff;
+}
+.no-result {
+  text-align: center;
+  font-size: 34px;
+  color: #fff;
+  margin-top: 20px;
+}
+/* -------popup창-------- */
+.popup {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px;
+}
+.rating {
+  font-size: 20px;
+}
+.popup h2 {
+  font-size: 40px;
+  color: #fff;
+  width: 75%;
+}
+.poster {
+  display: flex;
+}
+.poster img {
+  width: 300px;
+  height: 400px;
+}
+.poster-right {
+  margin-left: 30px;
+}
+.poster-right p {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.poster-right p:nth-child(3) {
+  margin-bottom: 0;
+}
+.poster-right span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5d90a9;
+}
+.heart {
+  background: transparent;
+}
+.App {
+  /* position: relative; */
+  position: absolute;
+  top: -30px;
+  left: 100px;
+}
+.add {
+  position: absolute;
+  /* top: 40%;
+  left: 80px; */
+  top: 40%;
+  left: 70px;
+  width: 140px;
+}
+.ant-btn-primary {
+  width: 120px;
+}
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.btn-position {
+  position: relative;
+}
+/* -------------Login---------- */
+.login {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+.login h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.login-box {
+  background: #fff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 150px;
+  text-align: center;
+  max-width: 500px;
+}
+.scrollTop {
+  color: #fff;
+  z-index: 10;
+  position: fixed;
+  top: 80%;
+  right: 0;
+}
+/* --------register-------- */
+.backToLogin {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  font-size: 26px;
+  border: 1px solid grey;
+  padding: 3px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.backToLogin:hover {
+  background: #000;
+  color: #fff;
+}
+/* -------------favoritepage------------- */
+.favorite {
+  position: fixed;
+  right: 0;
+  top: 10%;
+  width: 200px;
+  height: 90vh;
+  overflow: auto;
+  background: #5e5c5ca6;
+  z-index: 10;
+  text-align: center;
+  /* padding-bottom: 50px; */
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.favorite::-webkit-scrollbar {
+  width: 10px;
+}
+.favorite::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+}
+.favorite::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.favorite img {
+  width: 90%;
+  height: auto;
+}
+.favorite-box {
+  position: relative;
+  padding-bottom: 20px;
+}
+.favorite-box:nth-child(1) {
+  margin-top: 10px;
+}
+.favorite-icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 30px;
+  color: red;
+}
+/* ============== */
+/*  모바일 반응형  */
+/* ============== */
+@media screen and (max-width: 576px) {
+  /* favorite 페이지 */
+  .favorite {
+    position: fixed;
+    right: 0;
+    top: 10%;
+    width: 30%;
+    height: 90vh;
+  }
+  /* popUp */
+  .popup {
+    width: 90%;
+    padding: 30px 20px;
+    top: 12%;
+  }
+  .poster img {
+    width: 250px;
+    height: 350px;
+  }
+  .poster-right p {
+    font-size: 16px;
+  }
+  .close-popup {
+    top: 20px;
+    right: 0px;
+  }
+}
