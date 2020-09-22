@@ -99,14 +99,11 @@ function App() {
       const accessToken = sessionStorage.getItem("accessToken");
 
       // access token을 헤더에 담아서 private경로 요청
-      const res = await axios.get(
-        " https://sheltered-stream-95909.herokuapp.com/api/private",
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+      const res = await axios.get("http://localhost:5000/api/private", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
       console.log("favorite 모달 : ", res);
       // 에러발생안하면 Favorite리스트 열고 닫기 가능
       setFavorite(!favorite);
@@ -116,26 +113,20 @@ function App() {
       // 세션스토리지에 담긴 refreshToken을 찾는다
       const refreshToken = sessionStorage.getItem("refreshToken");
       // private경로 요청 에러시, users/token 경로로 refresh token을 담아서 요청
-      const res = await axios.post(
-        " https://sheltered-stream-95909.herokuapp.com/api/users/token",
-        {
-          token: refreshToken,
-        }
-      );
+      const res = await axios.post("http://localhost:5000/api/users/token", {
+        token: refreshToken,
+      });
       // console.log("재요청 : ", res);
       // 요청통해 전달받은 accessToken을 새로운 accessToken으로 선언
       const accessToken = res.data.accessToken;
       // 세션스토리지에 저장
       sessionStorage.setItem("accessToken", accessToken);
       // private경로 재요청
-      await axios.get(
-        " https://sheltered-stream-95909.herokuapp.com/api/private",
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+      await axios.get("http://localhost:5000/api/private", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
     }
   };
   //====================================
@@ -144,12 +135,9 @@ function App() {
   const logout = async () => {
     const refreshToken = sessionStorage.getItem("refreshToken");
     try {
-      const res = await axios.delete(
-        " https://sheltered-stream-95909.herokuapp.com/api/users/logout",
-        {
-          token: refreshToken,
-        }
-      );
+      const res = await axios.delete("http://localhost:5000/api/users/logout", {
+        token: refreshToken,
+      });
       sessionStorage.removeItem("accessToken");
       sessionStorage.removeItem("refreshToken");
       sessionStorage.removeItem("userId");

@@ -17,15 +17,11 @@ const FavoritePage = () => {
     // variable변수통해 userFrom에 대한 데이터를 favorites 로 가져옴
     // favoriteMovies 배열에 데이터 넣음
     axios
-      .post(
-        " https://sheltered-stream-95909.herokuapp.com/api/private/getFavoriteMovie",
-        variable,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+      .post("http://localhost:5000/api/private/getFavoriteMovie", variable, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
       .then((res) => {
         if (res.data.success) {
           setFavoriteMovies(res.data.favorites);
@@ -42,15 +38,11 @@ const FavoritePage = () => {
     };
 
     axios
-      .post(
-        " https://sheltered-stream-95909.herokuapp.com/api/private/removeFromFavorite",
-        variable,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+      .post("http://localhost:5000/api/private/removeFromFavorite", variable, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
       .then((res) => {
         if (res.data.success) {
           fetchFavoriteMovie();

@@ -22,15 +22,11 @@ const Favorite = ({
 
   //  좋아요를 누른 기록이 있으면 favorited => true
   axios
-    .post(
-      " https://sheltered-stream-95909.herokuapp.com/api/private/favorited",
-      variable,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    )
+    .post("http://localhost:5000/api/private/favorited", variable, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
     .then((res) => {
       if (res.data.success) {
         // 데이터 있으면 favorited=>true , 없으면 favorited=>false
@@ -48,7 +44,7 @@ const Favorite = ({
     if (favorited) {
       axios
         .post(
-          " https://sheltered-stream-95909.herokuapp.com/api/private/removeFromFavorite",
+          "http://localhost:5000/api/private/removeFromFavorite",
           variable,
           {
             headers: {
@@ -68,15 +64,11 @@ const Favorite = ({
       // 좋아요 최초로 누를 경우 : variable 정보를 FavoritePage로 넘김.
       // favorited가 false인 경우
       axios
-        .post(
-          " https://sheltered-stream-95909.herokuapp.com/api/private/addToFavorite",
-          variable,
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        )
+        .post("http://localhost:5000/api/private/addToFavorite", variable, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
         .then((res) => {
           if (res.data.success) {
             setClick(!favorited);
