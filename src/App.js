@@ -100,7 +100,7 @@ function App() {
 
       // access token을 헤더에 담아서 private경로 요청
       const res = await axios.get(
-        "https://git.heroku.com/moviedb-sj.git/api/private",
+        "https://moviedb-sj.herokuapp.com/api/private",
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -117,7 +117,7 @@ function App() {
       const refreshToken = sessionStorage.getItem("refreshToken");
       // private경로 요청 에러시, users/token 경로로 refresh token을 담아서 요청
       const res = await axios.post(
-        "https://git.heroku.com/moviedb-sj.git/api/users/token",
+        "https://moviedb-sj.herokuapp.com/api/users/token",
         {
           token: refreshToken,
         }
@@ -128,7 +128,7 @@ function App() {
       // 세션스토리지에 저장
       sessionStorage.setItem("accessToken", accessToken);
       // private경로 재요청
-      await axios.get("https://git.heroku.com/moviedb-sj.git/api/private", {
+      await axios.get("https://moviedb-sj.herokuapp.com/api/private", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -142,7 +142,7 @@ function App() {
     const refreshToken = sessionStorage.getItem("refreshToken");
     try {
       const res = await axios.delete(
-        "https://git.heroku.com/moviedb-sj.git/api/users/logout",
+        "https://moviedb-sj.herokuapp.com/api/users/logout",
         {
           token: refreshToken,
         }

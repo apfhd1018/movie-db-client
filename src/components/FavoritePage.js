@@ -18,7 +18,7 @@ const FavoritePage = () => {
     // favoriteMovies 배열에 데이터 넣음
     axios
       .post(
-        "https://git.heroku.com/moviedb-sj.git/api/private/getFavoriteMovie",
+        "https://moviedb-sj.herokuapp.com/api/private/getFavoriteMovie",
         variable,
         {
           headers: {
@@ -43,7 +43,7 @@ const FavoritePage = () => {
 
     axios
       .post(
-        "https://git.heroku.com/moviedb-sj.git/api/private/removeFromFavorite",
+        "https://moviedb-sj.herokuapp.com/api/private/removeFromFavorite",
         variable,
         {
           headers: {

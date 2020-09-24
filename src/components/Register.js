@@ -20,7 +20,7 @@ const Register = ({ setRegister, setLogin }) => {
   const onSubmit = async (values) => {
     try {
       await axios.post(
-        "https://git.heroku.com/moviedb-sj.git/api/users/add",
+        "https://moviedb-sj.herokuapp.com/api/users/add",
         values
       );
       alert("You have successfully registered as a member. Please log in.");

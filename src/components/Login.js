@@ -20,7 +20,7 @@ const Login = ({ login, setLogin, openRegister, setChange }) => {
   const onLogin = async (values) => {
     try {
       const res = await axios.post(
-        "https://git.heroku.com/moviedb-sj.git/api/users/login",
+        "https://moviedb-sj.herokuapp.com/api/users/login",
         values
       );
       // 서버에서 res.json과 같은 형태로 전송을 해야 클라이언트에서 사용 가능!!

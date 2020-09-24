@@ -30,15 +30,11 @@ const Result = ({
   // 영화검색후 나온 포스터 누를 때 API 요청
   const fetchLikeData = () => {
     axios
-      .post(
-        "https://git.heroku.com/moviedb-sj.git/api/private/getLike",
-        variable,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+      .post("https://moviedb-sj.herokuapp.com/api/private/getLike", variable, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
       .then((res) => {
         if (res.data.success) {
           setClick(res.data.likeData); // 데이터 있으면 하트 On 없으면 하트Off
